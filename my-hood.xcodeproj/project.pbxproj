@@ -14,6 +14,8 @@
 		DAFFE4761C790FE500046218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFFE4741C790FE500046218 /* LaunchScreen.storyboard */; };
 		DAFFE4811C790FE500046218 /* my_hoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFE4801C790FE500046218 /* my_hoodTests.swift */; };
 		DAFFE48C1C790FE500046218 /* my_hoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFE48B1C790FE500046218 /* my_hoodUITests.swift */; };
+		DAFFE49B1C79105600046218 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFE49A1C79105600046218 /* Post.swift */; };
+		DAFFE49E1C791A4300046218 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFE49D1C791A4300046218 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		DAFFE4871C790FE500046218 /* my-hoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "my-hoodUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFFE48B1C790FE500046218 /* my_hoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_hoodUITests.swift; sourceTree = "<group>"; };
 		DAFFE48D1C790FE500046218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAFFE49A1C79105600046218 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DAFFE49D1C791A4300046218 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		DAFFE46A1C790FE500046218 /* my-hood */ = {
 			isa = PBXGroup;
 			children = (
+				DAFFE49C1C791A1700046218 /* View */,
+				DAFFE4991C79104400046218 /* Model */,
 				DAFFE46B1C790FE500046218 /* AppDelegate.swift */,
 				DAFFE46D1C790FE500046218 /* ViewController.swift */,
 				DAFFE46F1C790FE500046218 /* Main.storyboard */,
@@ -123,6 +129,22 @@
 				DAFFE48D1C790FE500046218 /* Info.plist */,
 			);
 			path = "my-hoodUITests";
+			sourceTree = "<group>";
+		};
+		DAFFE4991C79104400046218 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAFFE49A1C79105600046218 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DAFFE49C1C791A1700046218 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAFFE49D1C791A4300046218 /* PostCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFFE49B1C79105600046218 /* Post.swift in Sources */,
 				DAFFE46E1C790FE500046218 /* ViewController.swift in Sources */,
 				DAFFE46C1C790FE500046218 /* AppDelegate.swift in Sources */,
+				DAFFE49E1C791A4300046218 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
