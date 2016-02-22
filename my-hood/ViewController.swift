@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [Post]()
     
 
     override func viewDidLoad() {
@@ -20,16 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
+        DataService.instance.loadPosts()
         
-        var post = Post(imagePath: "", title: "Post 1", description: "post 1 description")
-        var post2 = Post(imagePath: "", title: "Post 2", description: "post 2 descriptionnn")
-        var post3 = Post(imagePath: "", title: "Post 3", description: "post 3 whatever")
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: "onPostsLoaded:", name: "postsLoaded", object: nil)
         
-        posts.append(post)
-        posts.append(post2)
-        posts.append(post3)
-        
-        tableView.reloadData()
         
     }
 
@@ -39,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
+        let post = DataService.instance.loadedPosts[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.configureCell(post)
             return cell
@@ -50,12 +43,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 87.0
     }
   
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.instance.loadedPosts.count
+    }
+    
+    func onPostsLoaded(notif: AnyObject) {
+        tableView.reloadData()
     }
     
     

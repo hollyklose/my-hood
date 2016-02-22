@@ -220,6 +220,9 @@
                                 <state key="normal" title="Make Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="makePostBtnPressed:" destination="AfJ-di-w7I" eventType="touchUpInside" id="a4z-hF-mou"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -247,7 +250,6 @@
                     </view>
                     <connections>
                         <outlet property="descField" destination="Ait-BW-QJg" id="uLX-hO-9xc"/>
-                        <outlet property="makePostBtnPressed" destination="zH7-VS-Opm" id="k3p-jx-Vkp"/>
                         <outlet property="postImg" destination="4sq-rI-030" id="UQ2-1k-IkA"/>
                         <outlet property="titleField" destination="1hS-lY-fAZ" id="CDx-qV-JI9"/>
                     </connections>
